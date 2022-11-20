@@ -1,0 +1,72 @@
+.pepole_section {
+  color: white;
+  padding: 0.5rem 2rem;
+  margin: 0 auto;
+  max-width: 1128px;
+}
+
+.pepole {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem;
+  color: white;
+}
+
+.card {
+  max-width: 300px;
+  min-width: 300px;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  height: 400px;
+}
+.card .cover {
+  position: relative;
+  border: 1px solid gray;
+}
+.card .cover .image__cover {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+.card .profile__photo {
+  max-width: fit-content;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 100%;
+  z-index: 111;
+  border: 4px solid black;
+  border-radius: 50%;
+}
+
+.info {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.info h3 {
+  letter-spacing: 2px;
+  padding: 0.5rem;
+  color: rgb(238, 238, 238);
+}
+
+.info h4 {
+  letter-spacing: 1.5px;
+  padding: 0.3rem;
+  color: rgb(224, 220, 220);
+}
+
+.info p {
+  letter-spacing: 0.9px;
+  font-size: 15px;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}

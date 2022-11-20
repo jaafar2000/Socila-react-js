@@ -1,0 +1,49 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+
+
+
+}
+body {
+  background-color: #0f0f0f;
+  color: white;
+}
+.container {
+  max-width: 1128px;
+  margin: 0 auto;
+
+}
+.App{
+  height: 100vh;
+  overflow-y: scroll;
+  margin: auto;
+
+}
+.App::-webkit-scrollbar{
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.noPostToShow{
+  background-color: #202020;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:200px;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  color: gray;
+}
+.welcome{
+  margin: 1rem auto;
+  width: fit-content;
+  color: gray;
+  font-size: 1.3rem;
+}

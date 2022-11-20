@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Header from "./components/Header/Header";
+import Home from "./pages/Home/Home";
+import People from "./pages/people/People";
+import Profile from "./pages/profile/Profile";
 
+import { useContext } from "react";
+import { socialContext } from "./context/socialContext";
+import "./global.css";
+import SignIn from "./pages/signin/SignIn";
+import UserDetail from "./pages/userDetails/UserDetail";
 function App() {
+  const { user } = useContext(socialContext);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      {!user ? (
+        <SignIn />
+      ) : (
+        <>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="profile" element={<Profile />} />
+            <Route path="/people" element={<People />} />
+            <Route path=":id" element={<UserDetail/>} />
+          </Routes>
+        </>
+      )}
     </div>
   );
 }

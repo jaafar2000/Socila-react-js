@@ -1,0 +1,42 @@
+.signin{
+  margin: auto;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 3rem;
+
+
+}
+.signin h1 {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+
+}
+
+.signin p {
+  margin-bottom: 5rem;
+  font-size: 2rem;
+}
+
+.signin .signin__btn{
+  width: fit-content;
+  margin: auto;
+  padding: 1rem 1.3rem;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #2a2b2b;
+
+  border-radius: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+.signin__btn:hover{
+  cursor: pointer;
+  transform: scale(1.08);
+}
+.signin__btn span {
+  margin-right: 0.4rem;
+}

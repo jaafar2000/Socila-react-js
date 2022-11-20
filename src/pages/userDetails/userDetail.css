@@ -1,0 +1,115 @@
+.Profile{
+  padding: 1rem 2rem;
+  width: 100%;
+  background-color: #0f0f0f;
+  color: white;  
+  
+  max-width: 1128px;
+  margin: 0 auto;
+
+}
+.Profile .prfile__header{
+  max-width: 100%;
+}
+
+.prfile__header .profile__background{
+  position: relative;
+  width: 100%;
+
+}
+.prfile__header .profile__background .background{
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  height: 300px;
+}
+.child{
+  position: absolute;
+  bottom: -140px;
+  left: 10px;
+}
+.profile__background  .pic{
+  object-fit: cover;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  border: 10px solid white;
+
+}
+.header__info{
+  margin-top: 1rem;
+  margin-left: 14rem;
+
+}
+
+
+.header__info p {
+  opacity: 0.7;
+  margin-bottom: 0.5rem;
+}
+.header__info p:nth-of-type(2) {
+  opacity: 0.7;
+  margin-bottom: 0.5rem;
+}
+
+.header__info .btn__update{
+  background-color: #111;
+  border: 1px solid gray;
+  color: white;
+  letter-spacing: 1px;
+  padding: 0.5rem ;
+  transition: ease-in-out 0.3s all;
+  border-radius: 0.5rem;
+
+
+}
+.header__info .btn__update:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.profiel__feed{
+  display: flex;
+  margin-top: 2rem;
+
+}
+.box_p{
+  letter-spacing: 1px;
+  line-height: 30px;
+}
+.profiel__feed .posts {
+  min-width: 600px;
+  max-width: 600px;
+  margin-right: 1rem;
+}
+
+@media screen and (max-width : 900px){
+  .profiel__feed{
+    display: flex;
+    flex-direction: column-reverse;
+    width: fit-content;
+    margin: 2rem auto;
+  }
+
+  .profiel__feed .posts {
+    margin-right: 0rem;
+  }
+
+}
+.addPost{
+  width: 100%;
+}
+
+.Following{
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  background-color: #202020;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+}
+.Following p{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}

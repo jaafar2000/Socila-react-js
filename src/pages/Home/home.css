@@ -1,0 +1,128 @@
+.home {
+  padding: 0.5rem 2rem;
+  display: flex;
+  gap: 10px;
+  max-width: 1128px;
+  margin: 0 auto;
+  height: 93vh;
+  overflow-y: hidden;
+  background-color: #0f0f0f;
+}
+
+.addpost__posts {
+  width: 70%;
+}
+
+@media screen and (max-width: 900px) {
+  .addpost__posts {
+    width: 100%;
+  }
+}
+.AddPostSection {
+  position: sticky;
+  color: white;
+  z-index: 1000;
+  background-color: #202020;
+  width: 100%;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+}
+
+.posts_section {
+  height: 78vh;
+  border-radius: 0.5rem;
+  overflow-y: scroll;
+  padding-right: 0.5rem;
+  padding-bottom: 5rem;
+}
+@media screen and (max-width: 900px) {
+  .posts_section {
+    width: 100% !important;
+  }
+}
+.posts_section::-webkit-scrollbar {
+  display: none;
+}
+/* .posts_section::-webkit-scrollbar {
+  width: 5px;
+}
+.posts_section::-webkit-scrollbar-track {
+  background: #111;
+}
+.posts_section::-webkit-scrollbar-thumb {
+  background: #555;
+} */
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.miniProfile__user {
+  width: 30%;
+}
+.miniProfile {
+  position: sticky;
+}
+
+.miniProfile__user .miniProfile {
+  margin-top: 0.7rem;
+  background-color: #202020;
+  color: white;
+  border-radius: 0.5rem;
+}
+@media screen and (max-width: 900px) {
+  .miniProfile__user {
+    display: none;
+  }
+  .addpost__posts {
+    margin: 0 auto;
+  }
+}
+.miniProfile__user .miniProfile .info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  margin-top: 0;
+}
+
+.miniProfile__user .miniProfile .info div {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.5rem;
+}
+
+.miniProfile__user .miniProfile .info > div p {
+  font-size: 13px;
+  margin-top: 3px;
+  color: gray;
+}
+
+.users {
+  background-color: #202020;
+  color: white;
+  border-radius: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.user__section {
+  padding-left: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.sideProfiel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user__section .sideProfiel p {
+  font-size: 12px;
+  opacity: 0.8;
+}

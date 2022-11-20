@@ -1,0 +1,88 @@
+.add__post {
+  padding: 1rem;
+  background-color: white;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  background-color: #202020;
+}
+@media screen and (max-width: 900px) {
+  .add__post {
+    padding: 0.7rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    width:100% !important;
+    background-color: #202020;
+  }
+}
+
+.add__post__head {
+  display: flex;
+  gap: 10px;
+}
+
+.add__post__head .border {
+  border: 3px solid gray;
+  border-radius: 50%;
+}
+.add__post__head .inputPost {
+  width: 100%;
+  padding-left: 1rem;
+  outline: none;
+  border-radius: 1rem;
+  background-color: #202020;
+  border: 1px solid gray;
+}
+.box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.box i {
+  background-color: black;
+  width: 50px;
+  height: 50px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-bottom: 0.6rem;
+}
+.box label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.box label p {
+  font-weight: bold;
+}
+.box .caption {
+  margin-top: 1rem;
+  outline: none;
+  border: none;
+  width: fit-content;
+  text-align: center;
+  font-size: 1rem;
+}
+.btn {
+  background-color: black;
+  color: white;
+  margin-top: 2rem;
+  width: 50%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  letter-spacing: 1.2px;
+  transition: all 0.3s ease-in-out;
+}
+.btn:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

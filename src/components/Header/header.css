@@ -1,0 +1,136 @@
+.header {
+  padding: 0.5rem 2rem;
+  background-color: white;
+  background-color: #0f0f0f;
+  box-shadow: 2px -20px 15px 7px rgb(78, 78, 78);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__logo {
+  color: white;
+}
+
+.header__logo span:nth-of-type(1) {
+  background-color: black;
+  padding: 0.1rem 0.2rem;
+  border-radius: 0.2rem;
+  margin-right: 2px;
+  color: white;
+}
+.header__logo span:nth-of-type(2) {
+  color: black;
+  background-color: white;
+  border-radius: 0.3rem;
+  padding: 0 0.2rem;
+}
+@media screen and (max-width: 900px) {
+  .header__logo {
+    font-size: 0.7rem;
+  }
+}
+.header__links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 900px) {
+  .header__links {
+    position: sticky;
+    bottom: 0;
+  }
+}
+
+.header .header__links .header__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-right: 2rem;
+  position: relative;
+  width: 35px;
+  height: 35px;
+  padding: 0.3rem;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+}
+@media screen and (max-width: 900px) {
+  .header .header__links .header__icon {
+    margin-right: 0.5rem;
+  }
+}
+.header__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__info .btn-update {
+  background-color: none !important;
+}
+
+.active {
+  color: white !important;
+  position: relative;
+}
+.active::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  width: 6px;
+  height: 6px;
+  bottom: -3px;
+  left: 50%;
+  border-radius: 50%;
+  transform: translatex(-50%);
+}
+.header__icon:hover {
+  background-color: rgba(128, 128, 128, 0.534);
+  width: 170%;
+}
+
+.header-profile-pic {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-profile-pic .border {
+  border: 3px solid gray;
+  border-radius: 50%;
+}
+@media screen and (max-width: 900px) {
+  .header-profile-pic .border {
+    display: none;
+  }
+}
+.header-profile-pic .Logout {
+  height: 24px;
+  position: relative;
+}
+.header-profile-pic .iconSignOut {
+  width: 40px;
+  font-size: 25px;
+  color: white;
+}
+
+.Logout > p {
+  position: absolute;
+  padding: 10px;
+  left: -30px;
+  border-radius: 4px;
+  top: 40px;
+  opacity: 0;
+  transition: all ease-in-out 0.3s;
+  border: none;
+  background-color: #202020;
+}
+.header-profile-pic .Logout:hover > p {
+  opacity: 1;
+  cursor: pointer;
+}

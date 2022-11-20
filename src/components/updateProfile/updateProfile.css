@@ -1,0 +1,54 @@
+.updateProfile {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  padding: 1rem;
+  gap: 1.5rem;
+}
+
+.updateProfile div .updateName {
+  border: none;
+  border: 1px solid gray;
+
+  padding: 0.5rem 1rem;
+
+  border-radius: 0.2rem;
+  width: 100%;
+}
+.updateProfile div textarea {
+  resize: none;
+  border: 1px solid gray;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  width: 100%;
+}
+
+.updateProfile .update__photo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.update__photo img {
+  width: 40px;
+}
+
+.updateProfile .updateBtn {
+  background-color: black;
+  width: 40%;
+  color: white;
+  margin: auto;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  letter-spacing: 1px;
+  margin-top: 1rem;
+  transition: all ease-in-out 0.3s;
+}
+.updateBtn:hover {
+  cursor: pointer;
+  transform: scale(1.09);
+}
+
+.updateBtn:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
