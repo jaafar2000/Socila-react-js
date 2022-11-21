@@ -38,7 +38,8 @@
   border-radius: 50%;
   width: 200px;
   height: 200px;
-  border: 10px solid white;
+  border: 10px solid #0f0f0f;
+
 }
 .header__info {
   margin-top: 1rem;

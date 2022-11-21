@@ -24,15 +24,7 @@ import {
 } from "react-icons/ai";
 import "./post.css";
 import Moment from "react-moment";
-const Post = ({
-  id,
-  name,
-  postImage,
-  caption,
-  displayName,
-  image,
-  time,
-}) => {
+const Post = ({ id, name, postImage, caption, displayName, image, time }) => {
   const { user } = useContext(socialContext);
   const [comment, setComment] = useState();
   const [comments, setComments] = useState([]);
@@ -84,10 +76,18 @@ const Post = ({
     }
   };
   const DeletePost = (id) => {
-    alert("are you sure");
-    const colRef = doc(db, "Posts", id);
-    deleteDoc(colRef).then(() => {});
+    if (window.confirm("are you sure")) {
+      const colRef = doc(db, "Posts", id);
+      deleteDoc(colRef).then(() => {});
+    }
   };
+  const DeleteComment = (postId, commentId) => {
+    if (window.confirm("are you sure")) {
+      const colRef = doc(db, "Posts", `${postId}`, "comments", `${commentId}`);
+      deleteDoc(colRef).then(() => {});
+    }
+  };
+
   return (
     <div className="post">
       <div className="postHeader">
@@ -158,6 +158,15 @@ const Post = ({
               <p>{comment.data().displayName || comment.data().name}</p>
               <p>{comment.data().comment}</p>
               <p>
+                {(user?.name === name ||
+                  user?.name === comment.data().name) && (
+                  <span
+                    className="delComment"
+                    onClick={() => DeleteComment(id, comment?.id)}
+                  >
+                    <AiOutlineDelete />
+                  </span>
+                )}
                 <Moment fromNow>{comment.data()?.time?.toDate()}</Moment>
               </p>
             </div>

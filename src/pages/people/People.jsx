@@ -38,9 +38,9 @@ const People = () => {
                     ? `Me:${user?.name}`
                     : `${usr?.data?.name}`}
                 </h3>
-                <h4>{usr?.data?.displayName}</h4>
-                <p>{usr?.data?.email}</p>
-                <p>{usr?.data?.Bio}</p>
+                <h4>{usr?.data?.displayName  }</h4>
+                <p>{usr?.data?.email   }</p>
+                <p>{usr?.data?.Bio  }</p>
               </div>
             </div>
           </Link>

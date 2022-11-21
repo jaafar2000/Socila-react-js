@@ -120,10 +120,30 @@
   flex: 2;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   margin-right: 3rem;
   color: rgb(182, 180, 180);
   font-size: 13px;
 }
+.comments .comment p:nth-of-type(3) span{
+  height: 19px;
+  width: 19px;
+  background-color: transparent;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  transition: all 0.3s ease-in-out;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comments .comment p:nth-of-type(3) span:hover{
+  color: white;
+  background-color: rgba(238, 238, 238, 0.199);
+  cursor: pointer;
+}
+
 .comment {
   margin-bottom: 5px;
 }

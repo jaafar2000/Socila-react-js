@@ -61,7 +61,7 @@ const Home = () => {
                 className="user__section"
                 key={`${user?.data?.id}${index}`}
               >
-                <Link to={`/userDetails/${user?.data?.id}`}>
+                <Link to={`${user?.data?.id}`}>
                   <div className="sideProfiel">
                     <Avatar
                       style={{ marginRight: "0.5rem" }}

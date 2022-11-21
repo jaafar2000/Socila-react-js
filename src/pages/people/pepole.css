@@ -21,7 +21,7 @@
   border: 1px solid gray;
   border-radius: 0.5rem;
   overflow: hidden;
-  height: 400px;
+  min-height: 300px;
 }
 .card .cover {
   position: relative;
@@ -69,4 +69,7 @@
   font-size: 15px;
   opacity: 0.8;
   margin-top: 0.5rem;
+  text-align: center;
+  line-height: 25px;
+  word-break: break-all;
 }
