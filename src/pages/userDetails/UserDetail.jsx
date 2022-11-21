@@ -57,6 +57,7 @@ const UserDetail = () => {
       unsub();
     };
   }, [posts]);
+  console.log(checkUser?.data?.backgroundImageUrl)
   return (
     <div className="Profile">
       <div className="prfile__header">
@@ -66,7 +67,7 @@ const UserDetail = () => {
             src={`${
               checkUser?.data?.backgroundImageUrl == null
                 ? "https://media.istockphoto.com/photos/grunge-wall-picture-id174931919?b=1&k=20&m=174931919&s=170667a&w=0&h=cPromaevJ8swveEAuDcOUs59mQxsmTXZMc91x1pAGtA="
-                : user?.backgroundImageUrl
+                : checkUser?.data?.backgroundImageUrl
             }`}
             alt=""
           />
