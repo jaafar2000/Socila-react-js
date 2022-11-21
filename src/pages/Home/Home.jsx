@@ -55,28 +55,29 @@ const Home = () => {
 
           <div className="users">
             <h3 style={style}>users</h3>
-
-            {usersDetails.map((user, index) => (
-              <div
-                className="user__section"
-                key={`${user?.data?.id}${index}`}
-              >
-                <Link to={`${user?.data?.id}`}>
-                  <div className="sideProfiel">
-                    <Avatar
-                      style={{ marginRight: "0.5rem" }}
-                      src={user?.data?.image}
-                    />
-                    <div>
+            <div>
+              {usersDetails.map((user, index) => (
+                <div
+                  className="user__section"
+                  key={`${user?.data?.id}${index}`}
+                >
+                  <Link to={`${user?.data?.id}`}>
+                    <div className="sideProfiel">
+                      <Avatar
+                        style={{ marginRight: "0.5rem" }}
+                        src={user?.data?.image}
+                      />
                       <div>
-                        <h5>{user?.data?.displayName || user?.data?.name}</h5>
-                        <p>{(user?.data?.email).slice(0, 20)}...</p>
+                        <div>
+                          <h5>{user?.data?.displayName || user?.data?.name}</h5>
+                          <p>{(user?.data?.email).slice(0, 20)}...</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </Link>
-              </div>
-            ))}
+                  </Link>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

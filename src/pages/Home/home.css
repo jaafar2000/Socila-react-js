@@ -13,11 +13,7 @@
   width: 70%;
 }
 
-@media screen and (max-width: 900px) {
-  .addpost__posts {
-    width: 100%;
-  }
-}
+
 .AddPostSection {
   position: sticky;
   color: white;
@@ -27,7 +23,10 @@
   padding-bottom: 1rem;
   margin-bottom: 1rem;
   border-radius: 1rem;
+  margin-top: 0 !important;
 }
+
+
 
 .posts_section {
   height: 78vh;
@@ -37,8 +36,17 @@
   padding-bottom: 5rem;
 }
 @media screen and (max-width: 900px) {
+  .addpost__posts {
+    width: 100%;
+  }
+  .home {
+    flex-direction: column-reverse;
+    height: fit-content;
+  }
+
   .posts_section {
     width: 100% !important;
+    height: fit-content;
   }
 }
 .posts_section::-webkit-scrollbar {
@@ -67,18 +75,12 @@
 
 .miniProfile__user .miniProfile {
   margin-top: 0.7rem;
-  background-color: #202020;
+  background-color: #202020 !important ; 
   color: white;
   border-radius: 0.5rem;
+
 }
-@media screen and (max-width: 900px) {
-  .miniProfile__user {
-    display: none;
-  }
-  .addpost__posts {
-    margin: 0 auto;
-  }
-}
+
 .miniProfile__user .miniProfile .info {
   display: flex;
   flex-direction: row;
@@ -116,6 +118,8 @@
   width: 100%;
 }
 
+
+
 .sideProfiel {
   display: flex;
   align-items: center;
@@ -125,4 +129,85 @@
 .user__section .sideProfiel p {
   font-size: 12px;
   opacity: 0.8;
+}
+@media screen and (max-width: 900px) {
+  .users {
+    width: 100px !important ;
+  }
+  .addpost__posts {
+    margin: 0 auto;
+  }
+  .miniProfile__user{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  .miniProfile{
+    display: none;
+
+  }
+  .users {
+    display: flex;
+    flex-direction: column;
+    width: 100% !important;
+  }
+
+  .user__section{
+    display: flex !important;
+    flex-direction: row;
+    width: fit-content;
+  }
+
+  .users > div {
+    display: flex;
+    justify-content: space-around;
+    padding:0  10px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin-top: 10px;
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 0.5rem;
+  }
+  .users > div::-webkit-scrollbar {
+    height: 5px;
+    background-color: #202020;
+    margin-top: 0.5rem;
+
+  }
+  .users > div::-webkit-scrollbar-thumb {
+
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgb(44, 44, 44),
+      rgb(53, 53, 53),
+      transparent
+    );
+    width: 10px;
+  }
+
+  .users > div .user__section a .sideProfiel{
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    justify-content: center;
+    width:fit-content;
+    height: fit-content;
+
+  }
+  .users > div .user__section a .sideProfiel h5{
+    margin-top: 0.5rem;
+    width: 90px;
+    height: 50px;
+    white-space: nowrap;
+    height: fit-content;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .users > div .user__section a .sideProfiel p{
+    display: none;
+  }
+  
 }
