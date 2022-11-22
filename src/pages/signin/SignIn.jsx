@@ -9,24 +9,8 @@ import "./signin.css";
 
 const SignIn = () => {
   const { setUser, users } = useContext(socialContext);
-  const [nowUser, setNow] = useState("");
   const signIn = () => {
     signInWithPopup(auth, provider).then(async (result) => {
-      if (users.length == 0) {
-        try {
-          console.log("sdfasd");
-          setDoc(doc(db, "users", `${result?.user?.displayName}`), {
-            name: result?.user?.displayName,
-            displayName: "",
-            id: result?.user?.uid,
-            email: result?.user?.email,
-            image: result?.user?.photoURL,
-            backgroundImage: null,
-          });
-        } catch {
-          console.log("err");
-        }
-      } else {
         if (users.includes(result?.user?.displayName)) {
           console.log("yes")
           const doRef = doc(db, "users", `${result?.user.displayName}`);
@@ -43,7 +27,6 @@ const SignIn = () => {
             backgroundImage: null,
           });
         }
-      }
     });
   }; //end of sign in
 
