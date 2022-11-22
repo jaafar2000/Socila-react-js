@@ -21,10 +21,10 @@ const Home = () => {
           </div>
           <div className="posts_section">
             {posts.length ? (
-              posts.map((post) => (
+              posts.map((post,index) => (
                 <Post
                   id={post.id}
-                  key={post?.data()?.time?.seconds}
+                  key={`$${index}${post?.id}`}
                   name={post?.data()?.name}
                   displayName={post?.data()?.displayName}
                   email={post?.data()?.email}

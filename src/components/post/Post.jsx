@@ -11,6 +11,7 @@ import {
   deleteDoc,
   doc,
 } from "firebase/firestore";
+import Comment from "../comment/Comment";
 import { BiSend } from "react-icons/bi";
 import db from "../../firebase";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
@@ -23,10 +24,10 @@ import {
   AiOutlineDelete,
 } from "react-icons/ai";
 import "./post.css";
-import Moment from "react-moment";
+
 const Post = ({ id, name, postImage, caption, displayName, image, time }) => {
   const { user } = useContext(socialContext);
-  const [comment, setComment] = useState();
+  const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
   const [likes, setLikes] = useState([]);
   const [liked, setLiked] = useState(false);
@@ -37,7 +38,7 @@ const Post = ({ id, name, postImage, caption, displayName, image, time }) => {
     onSnapshot(q, (snapshot) => {
       setComments(snapshot.docs);
     });
-  }, [comment]);
+  }, [comments]);
 
   useEffect(() => {
     const colRef = collection(db, "Posts", id, "likes");
@@ -149,27 +150,20 @@ const Post = ({ id, name, postImage, caption, displayName, image, time }) => {
       <div className="comments">
         {comments &&
           comments.map((comment) => (
-            <div className="comment" key={comment?.data()?.time?.seconds}>
-              <Avatar
-                src={comment?.data()?.userImage}
-                sx={{ width: 30, height: 30, marginRight: "0.5rem" }}
-                className="comment__avatar"
-              />
-              <p>{comment.data().displayName || comment.data().name}</p>
-              <p>{comment.data().comment}</p>
-              <p>
-                {(user?.name === name ||
-                  user?.name === comment.data().name) && (
-                  <span
-                    className="delComment"
-                    onClick={() => DeleteComment(id, comment?.id)}
-                  >
-                    <AiOutlineDelete />
-                  </span>
-                )}
-                <Moment fromNow>{comment.data()?.time?.toDate()}</Moment>
-              </p>
-            </div>
+            <>
+              <Comment 
+                commentText={comment?.data()?.comment} 
+                postId={id} 
+                name={name} 
+                DeleteComment={DeleteComment}
+                key={comment?.id}
+                userCommentImage = {comment?.data()?.userImage}
+                userCommentDisplayName={comment?.data().displayName}
+                userCommentName={comment?.data().name}
+                date={comment.data()?.time}
+                commentId= {comment?.id}
+                user={user} />
+            </>
           ))}
       </div>
       {/* add comment */}
