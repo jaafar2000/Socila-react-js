@@ -36,7 +36,6 @@ const UserDetail = () => {
   const { posts, user } = useContext(socialContext);
   const [profilePosts, setProfilePosts] = useState([]);
 
-
   useEffect(() => {
     usersDetails.map((user) => {
       console.log(id);
@@ -46,18 +45,13 @@ const UserDetail = () => {
     });
   }, [id]);
   useEffect(() => {
-    const unsub = () => {
-      setProfilePosts(
-        posts.filter((post) => {
-          return post?.data()?.name == checkUser?.data?.name;
-        })
-      );
-    };
-    return () => {
-      unsub();
-    };
-  }, [posts]);
-  console.log(checkUser?.data?.backgroundImageUrl)
+    setProfilePosts(
+      posts.filter((post) => {
+        return post?.data()?.name == checkUser?.name;
+      })
+    );
+  }, [posts, id, checkUser]);
+
   return (
     <div className="Profile">
       <div className="prfile__header">
@@ -109,7 +103,12 @@ const UserDetail = () => {
       {/* posts and add post */}
       <div className="profiel__feed">
         <div className="posts">
-          <h3 style={{ margin: "1rem" }}>{checkUser?.data?.displayName ? checkUser?.data?.displayName : checkUser?.data?.name } Posts</h3>
+          <h3 style={{ margin: "1rem" }}>
+            {checkUser?.data?.displayName
+              ? checkUser?.data?.displayName
+              : checkUser?.data?.name}{" "}
+            Posts
+          </h3>
           <div className="postContainer">
             {profilePosts.length > 0 ? (
               profilePosts.map((post, index) => (
